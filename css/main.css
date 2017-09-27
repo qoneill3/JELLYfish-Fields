@@ -3,4 +3,61 @@ body {
 	width: 100%
 	margin: 0;
 	font-family: sans-serif;
+	background-color: grey;
+}
+h1 {
+	color: white;
+	text-align: center;
+	text-decoration: underline;
+}
+#container {
+	position: relative;
+	height: 90vh;
+	width: 75%;
+	left: 15%;
+	margin-top: 50px;
+	background-color: green;
+	
+}
+
+#game-board { 
+	position: relative;
+	size: cover;
+}
+
+.player{
+	position: absolute;
+	height: 50px;
+	width: 50px;
+}
+#spongebob {
+	height: 50px;
+	width: 50px;
+	top: 0%;
+	left: 0%;
+	background-color: yellow;
+}
+
+.jelly {
+	position: absolute;
+	height: 50px;
+	width: 50px;
+	
+	background-color: pink;
+
+}
+#jelly_1 {
+	top: 0%;
+	left: 10%;
+}
+
+#jelly_2 {
+	top: 0%;
+	left: 20%;
+
+}
+
+#jelly_3 {
+	top: 0%;
+	left: 30%;
 }

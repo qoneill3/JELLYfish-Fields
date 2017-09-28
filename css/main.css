@@ -2,23 +2,35 @@ body {
 	height: 100%;
 	width: 100%
 	margin: 0;
-	font-family: sans-serif;
+	
 	background-color: grey;
 }
 h1 {
 	color: white;
 	text-align: center;
-	text-decoration: underline;
+	
+	font-family: 'Freckle Face', cursive;	
+
 }
+
+@font-face {
+	font-family: 'Krabby-Patty';
+	src: url('Krabby-Patty.ttf') format('truetype');
+}
+
 #container {
 	position: relative;
-	height: 90vh;
+	height: 80vh;
 	width: 75%;
-	left: 15%;
+	left: 20%;
 	margin-top: 50px;
-	background-color: green;
-	
+    background: url('http://www.mindspring.com/~imagea/forrest/SpongebobSquarepants_SmallSized/SB_JellyfishFields2_BG_1%20copy.jpg') no-repeat;
+	background-size: cover;
+	overflow: hidden;
 }
+
+	
+
 
 #game-board { 
 	position: relative;
@@ -31,11 +43,13 @@ h1 {
 	width: 50px;
 }
 #spongebob {
-	height: 50px;
-	width: 50px;
-	top: 0%;
-	left: 0%;
-	background-color: yellow;
+	height: 250px;
+	width: 150px;
+	top: 50%;
+	left: 50%;
+	background: url('http://simex-iwerks.com/spongebob-4d/parallax/images/clouds/10.png') no-repeat;
+	background-size: contain;
+	border-radius: 15px 15px 15px 15px;
 }
 
 .jelly {
@@ -43,21 +57,57 @@ h1 {
 	height: 50px;
 	width: 50px;
 	
-	background-color: pink;
-
+	background: url('https://studio.code.org/v3/assets/6ExOiqS7Hwk0HSmIDWxz9Q/Jellyfish.png') no-repeat;
+	background-size: contain;
 }
 #jelly_1 {
-	top: 0%;
+	top: -15%;
 	left: 10%;
 }
 
 #jelly_2 {
-	top: 0%;
+	top: -25%;
 	left: 20%;
 
 }
 
 #jelly_3 {
-	top: 0%;
+	top: -35%;
 	left: 30%;
+}
+
+#jelly_4 {
+	top: -45%;
+	left: 40%;
+}
+
+#jelly_5 {
+	top: -55%;
+	left: 50%;
+}
+
+#jelly_6 {
+	top: -65%;
+	left: 60%;
+}
+
+#king_jelly {
+	position: absolute;
+	top: -85%;
+	left: 70%;
+	height: 150px;
+	width: 150px;
+	background: url('https://vignette4.wikia.nocookie.net/nicktoonstoonswars/images/6/64/King_Jellyfish.png/revision/latest?cb=20120123205620') no-repeat;
+	background-size: contain;
+}
+
+#score_div{
+    position: absolute;
+    margin-top: 20%;
+    margin-left: 0;
+    font-size: 35px;
+    background-color: white;
+    color: #454545;
+    padding: 10px;
+    box-shadow: 4px 4px 0px 1px #808080;
 }

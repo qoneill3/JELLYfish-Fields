@@ -1,5 +1,10 @@
+$(function() {	
+
+
 	console.log("what the fuck is up!");
 
+
+	var anim_id;
 	//saving DOM objects to variables
 	var container = $('#container');
 	var spongebob = $('#spongebob');
@@ -10,6 +15,10 @@
     var jelly_1 = $('#jelly_1');
     var jelly_2 = $('#jelly_2');
     var jelly_3 = $('#jelly_3');
+    var jelly_4 = $('#jelly_4');
+    var jelly_5 = $('#jelly_5');
+    var jelly_6  = $('#jelly_6');
+    var king_jelly = $('#king_jelly');
 
 	 //saving some initial setup
     var container_left = parseInt(container.css('left'));
@@ -17,6 +26,8 @@
     var container_height = parseInt(container.height());
     var spongebob_width = parseInt(spongebob.width());
     var spongebob_height = parseInt(spongebob.height());
+    var jelly_width = parseInt(jelly.width());
+    var jelly_height = parseInt(jelly.height());
 
       //some other declarations
     var game_over = false;
@@ -103,37 +114,47 @@
     anim_id = requestAnimationFrame(repeat);
 
     function repeat() {
-        if (collision(spongebob, jelly_1) || collision(spongebob, jelly_2) || collision(spongebob, jelly_3)) {
-            stop_the_game();
-            return;
+        if (collision(spongebob, jelly_1) || collision(spongebob, jelly_2) || collision(spongebob, jelly_3) || collision(spongebob, jelly_4) || collision(spongebob, jelly_5) || collision(spongebob, jelly_6)) {
+            spongebob.on(function(){
+            	toggle.effect("shake");
+            });
+            console.log("Nice!");
+            score_counter++;
+            
         }
 
-        score_counter++;
+        
 
         if (score_counter % 20 == 0) {
             score.text(parseInt(score.text()) + 1);
         }
         if (score_counter % 500 == 0) {
             speed++;
-            line_speed++;
+            
         }
 
         jelly_down(jelly_1);
         jelly_down(jelly_2);
         jelly_down(jelly_3);
+        jelly_down(jelly_4);
+        jelly_down(jelly_5);
+        jelly_down(jelly_6);
+        jelly_down(king_jelly);
 
      
         anim_id = requestAnimationFrame(repeat);
     }
 
-    function jelly_down(jelly) {
-        var jelly_current_left = parseInt(jelly.css('left'));
-        if (jelly_current_left > container_height) {
-            jelly_current_left = -200;
-            var jelly_height = parseInt(Math.random() * (container_height - jelly_height));
-            jelly.css('top', jelly_left);
+    
+
+       function jelly_down(jelly) {
+        var jelly_current_top = parseInt(jelly.css('top'));
+        if (jelly_current_top > container_height) {
+            jelly_current_top = -200;
+            var jelly_left = parseInt(Math.random() * (container_width - jelly_width));
+            jelly.css('left', jelly_left);
         }
-        jelly.css('top', jelly_current_left + speed);
+        jelly.css('top', jelly_current_top + speed);
     }
 
    
@@ -175,3 +196,4 @@
 
 
 
+});

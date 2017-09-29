@@ -1,7 +1,7 @@
 $(function() {	
 
 
-	console.log("what the fuck is up!");
+
 
 
 	var anim_id;

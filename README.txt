@@ -4,4 +4,10 @@ link to my trello board : https://trello.com/b/izS9CTkw/jellyfish-fields
 
 I have a README !!
 
-wirerame: src="./images/WIREFRAME-PREVIEW.png"
+Control Spongebob: left, right, up, down
+
+Control Patrick: a, d, w, s
+
+Catch as many Jellyfish as you can!
+
+wirerame: src

@@ -1,0 +1,6 @@
+body {
+	width: 100%;
+	height: 40em;
+	background: url('http://stuffpoint.com/spongebob-square-pants/image/68971-spongebob-square-pants-sponbob-s.jpg') no-repeat;
+	background-size: contain;
+}

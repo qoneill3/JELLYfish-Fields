@@ -8,14 +8,14 @@ body {
 h1 {
 	color: white;
 	text-align: center;
-	
-	font-family: 'Freckle Face', cursive;	
+	font-size: 50px;
+	font-family: 'Krabby Patty', cursive;	
 
 }
 
 @font-face {
-	font-family: 'Krabby-Patty';
-	src: url('Krabby-Patty.ttf') format('truetype');
+	font-family: 'Krabby Patty';
+	src: url("./Krabby-Patty.ttf") format('ttf');
 }
 
 #container {
@@ -50,6 +50,15 @@ h1 {
 	background: url('http://simex-iwerks.com/spongebob-4d/parallax/images/clouds/10.png') no-repeat;
 	background-size: contain;
 	border-radius: 15px 15px 15px 15px;
+}
+
+#patrick {
+	height: 250px;
+	width: 150px;
+	top: 50%;
+	left: 45%;
+	background: url('https://files.gamebanana.com/img/ico/sprays/patrick_star_2_preview_2.png') no-repeat;
+	background-size: contain;
 }
 
 .jelly {

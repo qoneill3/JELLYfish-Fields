@@ -27,6 +27,7 @@ h1 {
     background: url('http://www.mindspring.com/~imagea/forrest/SpongebobSquarepants_SmallSized/SB_JellyfishFields2_BG_1%20copy.jpg') no-repeat;
 	background-size: cover;
 	overflow: hidden;
+	border: 15px solid white;
 }
 
 	

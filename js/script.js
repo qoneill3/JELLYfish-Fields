@@ -53,7 +53,7 @@ $(function() {
     var patrick_move_up = false;
     var patrick_move_down = false;
 
-
+    //Key Controls
     $(document).on('keydown', function(e) {
         if (game_over === false) {
             var key = e.keyCode;

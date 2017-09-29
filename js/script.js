@@ -19,6 +19,8 @@ $(function() {
     var jelly_5 = $('#jelly_5');
     var jelly_6  = $('#jelly_6');
     var king_jelly = $('#king_jelly');
+    var patrick = $('#patrick');
+    
 
 	 //saving some initial setup
     var container_left = parseInt(container.css('left'));
@@ -26,6 +28,8 @@ $(function() {
     var container_height = parseInt(container.height());
     var spongebob_width = parseInt(spongebob.width());
     var spongebob_height = parseInt(spongebob.height());
+    var patrick_width = parseInt(patrick.width());
+    var patrick_height = parseInt(patrick.height());
     var jelly_width = parseInt(jelly.width());
     var jelly_height = parseInt(jelly.height());
 
@@ -33,27 +37,49 @@ $(function() {
     var game_over = false;
 
     var score_counter = 1;
+    var score_counter_2 = 1;
 
     var speed = 2;
     var line_speed = 5;
 
-    var move_right = false;
-    var move_left = false;
-    var move_up = false;
-    var move_down = false;
+    var spongebob_move_right = false;
+    var spongebob_move_left = false;
+    var spongebob_move_up = false;
+    var spongebob_move_down = false;
+    
+
+    var patrick_move_right = false;
+    var patrick_move_left = false;
+    var patrick_move_up = false;
+    var patrick_move_down = false;
 
 
     $(document).on('keydown', function(e) {
         if (game_over === false) {
             var key = e.keyCode;
-            if (key === 37 && move_left === false) {
-                move_left = requestAnimationFrame(left);
-            } else if (key === 39 && move_right === false) {
-                move_right = requestAnimationFrame(right);
-            } else if (key === 38 && move_up === false) {
-                move_up = requestAnimationFrame(up);
-            } else if (key === 40 && move_down === false) {
-                move_down = requestAnimationFrame(down);
+            if (key === 37 && spongebob_move_left === false) {
+                spongebob_move_left = requestAnimationFrame(spongebob_left);
+            } 
+            else if (key === 39 && spongebob_move_right === false) {
+                spongebob_move_right = requestAnimationFrame(spongebob_right);
+            } 
+            else if (key === 38 && spongebob_move_up === false) {
+                spongebob_move_up = requestAnimationFrame(spongebob_up);
+            } 
+            else if (key === 40 && spongebob_move_down === false) {
+                spongebob_move_down = requestAnimationFrame(spongebob_down);
+            } 
+            else if (key === 65 && patrick_move_left === false) {
+            	patrick_move_left = requestAnimationFrame(patrick_left);            
+            } 
+            else if (key === 68 && patrick_move_right === false) {
+            	patrick_move_right = requestAnimationFrame(patrick_right);
+            } 
+            else if (key === 87 && patrick_move_up === false) {
+            	patrick_move_up = requestAnimationFrame(patrick_up);
+            } 
+            else if (key === 83 && patrick_move_down === false) {
+            	patrick_move_down = requestAnimationFrame(patrick_down);
             }
         }
     });
@@ -62,76 +88,124 @@ $(function() {
         if (game_over === false) {
             var key = e.keyCode;
             if (key === 37) {
-                cancelAnimationFrame(move_left);
-                move_left = false;
-            } else if (key === 39) {
-                cancelAnimationFrame(move_right);
-                move_right = false;
-            } else if (key === 38) {
-                cancelAnimationFrame(move_up);
-                move_up = false;
-            } else if (key === 40) {
-                cancelAnimationFrame(move_down);
-                move_down = false;
+                cancelAnimationFrame(spongebob_move_left);
+                spongebob_move_left = false;
+            } 
+
+            else if (key === 39) {
+                cancelAnimationFrame(spongebob_move_right);
+                spongebob_move_right = false;
+            } 
+            else if (key === 38) {
+                cancelAnimationFrame(spongebob_move_up);
+                spongebob_move_up = false;
+            }
+             else if (key === 40) {
+                cancelAnimationFrame(spongebob_move_down);
+                spongebob_move_down = false;
+            }
+             else if (key === 65) {
+            	cancelAnimationFrame(patrick_move_left);
+            	patrick_move_left = false;
+            } 
+            else if (key === 68) {
+            	cancelAnimationFrame(patrick_move_right);
+            	patrick_move_right = false;
+            }
+             else if (key === 87) {
+            	cancelAnimationFrame(patrick_move_up);
+            	patrick_move_up = false;
+            }
+             else if (key === 83) {
+            	cancelAnimationFrame(patrick_move_down);
+            	patrick_move_down = false;
             }
         }
     });
+   
 
-
-
-	//movement functions
+	//Player movement
 	     
 
-	 function left() {
+	 function spongebob_left() {
         if (game_over === false && parseInt(spongebob.css('left')) > 0) {
             spongebob.css('left', parseInt(spongebob.css('left')) - 5);
-            move_left = requestAnimationFrame(left);
+            spongebob_move_left = requestAnimationFrame(spongebob_left);
+        } 
+    }
+    function patrick_left() {
+    	  if (game_over === false && parseInt(patrick.css('left')) > 0) {
+        	patrick.css('left', parseInt(patrick.css('left')) - 5);
+        	patrick_move_left = requestAnimationFrame(patrick_left);
         }
     }
 
-    function right() {
+    function spongebob_right() {
         if (game_over === false && parseInt(spongebob.css('left')) < container_width - spongebob_width) {
             spongebob.css('left', parseInt(spongebob.css('left')) + 5);
-            move_right = requestAnimationFrame(right);
+            spongebob_move_right = requestAnimationFrame(spongebob_right);
+        } 
+    }
+
+    function patrick_right() {
+    	 if (game_over === false && parseInt(patrick.css('left')) < container_width - patrick_width) {
+        	patrick.css('left', parseInt(patrick.css('left')) + 5);
+        	patrick_move_right = requestAnimationFrame(patrick_right);
         }
     }
 
-    function up() {
+    function spongebob_up() {
         if (game_over === false && parseInt(spongebob.css('top')) > 0) {
             spongebob.css('top', parseInt(spongebob.css('top')) - 3);
-            move_up = requestAnimationFrame(up);
+            spongebob_move_up = requestAnimationFrame(spongebob_up);
+        } 
+    }
+
+    function patrick_up() {
+    	if (game_over === false && parseInt(patrick.css('top')) > 0) {
+        	patrick.css('top', parseInt(patrick.css('top')) - 3);
+        	patrick_move_up = requestAnimationFrame(patrick_up);
         }
     }
 
-    function down() {
+    function spongebob_down() {
         if (game_over === false && parseInt(spongebob.css('top')) < container_height - spongebob_height) {
             spongebob.css('top', parseInt(spongebob.css('top')) + 3);
-            move_down = requestAnimationFrame(down);
+            spongebob_move_down = requestAnimationFrame(spongebob_down);
+        } 
+    }
+
+    function patrick_down() {
+    	 if (game_over === false && parseInt(patrick.css('top')) < container_height - patrick_height) {
+        	patrick.css('top', parseInt(patrick.css('top')) + 3);
+        	patrick_move_down = requestAnimationFrame(patrick_down);
         }
     }
 
-     /* Move the cars and lines */
+    
     anim_id = requestAnimationFrame(repeat);
 
     function repeat() {
         if (collision(spongebob, jelly_1) || collision(spongebob, jelly_2) || collision(spongebob, jelly_3) || collision(spongebob, jelly_4) || collision(spongebob, jelly_5) || collision(spongebob, jelly_6)) {
-            spongebob.on(function(){
-            	toggle.effect("shake");
-            });
+            
             console.log("Nice!");
             score_counter++;
-            
-        }
+            }
+       
 
         
 
         if (score_counter % 20 == 0) {
             score.text(parseInt(score.text()) + 1);
+            
         }
         if (score_counter % 500 == 0) {
             speed++;
             
         }
+
+        
+
 
         jelly_down(jelly_1);
         jelly_down(jelly_2);
@@ -143,6 +217,15 @@ $(function() {
 
      
         anim_id = requestAnimationFrame(repeat);
+    }
+
+    function repeat_2() {
+    	if (collision(patrick, jelly_1) || collision(patrick, jelly_2) || collison(patrick, jelly_3) || collision(patrick, jelly_4) || collision(patrick, jelly_5) || collision(patrick, jelly_6)) {
+    		score_counter++;
+    		console.log("nice!");
+    	}
+
+    	
     }
 
     
@@ -161,7 +244,7 @@ $(function() {
     restart_btn.click(function() {
         location.reload();
     });
-
+    /*
     function stop_the_game() {
         game_over = true;
         cancelAnimationFrame(anim_id);

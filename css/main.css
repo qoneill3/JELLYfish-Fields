@@ -10,6 +10,7 @@ h1 {
 	text-align: center;
 	font-size: 70px;
 	font-family: 'Krabby Patty', cursive;	
+	margin-left: 10%;
 
 }
 
@@ -113,8 +114,9 @@ h1 {
 
 #score_div{
     position: absolute;
-    margin-top: 20%;
+    margin-top: 30%;
     margin-left: 0;
+    font-family: 'Krabby Patty', cursive;
     font-size: 35px;
     background-color: white;
     color: #454545;
@@ -122,10 +124,24 @@ h1 {
     box-shadow: 4px 4px 0px 1px #808080;
 }
 
+#controls {
+	position: absolute;
+	top: 0;
+	font-family: 'Krabby Patty', cursive;
+	margin-top: 0;
+	margin-left: 0;
+	font-size: 25px;
+	background-color: grey;
+	color: white;
+	padding: 10px;
+	box-shadow: 4px 4px 0px 1px #808080;
+}
+
 #score_div_2{
     position: absolute;
-    margin-top: 30%;
+    margin-top: 40%;
     margin-left: 0;
+    font-family: 'Krabby Patty', cursive;
     font-size: 35px;
     background-color: white;
     color: #454545;

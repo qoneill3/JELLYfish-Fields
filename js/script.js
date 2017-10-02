@@ -11,6 +11,7 @@ $(function() {
 	 var restart_div = $('#restart_div');
     var restart_btn = $('#restart');
     var score = $('#score');
+    var score_2 = $('#score_2');
     var jelly = $('.jelly');
     var jelly_1 = $('#jelly_1');
     var jelly_2 = $('#jelly_2');
@@ -190,7 +191,20 @@ $(function() {
             
             console.log("Nice!");
             score_counter++;
+
             }
+        if (collision(patrick, jelly_1) || collision(patrick, jelly_2) || collision(patrick, jelly_3) || collision(patrick, jelly_4) || collision(patrick, jelly_5) || collision(patrick, jelly_6)) {
+        	console.log("patrick");
+        	score_counter_2++;
+        }   
+
+        if (score_counter_2 % 20 == 0) {
+        	score_2.text(parseInt(score_2.text()) + 1);
+        }
+
+        if (score_counter_2 % 500 ==0) {
+        	speed++;
+        }
        
 
         
@@ -218,15 +232,15 @@ $(function() {
      
         anim_id = requestAnimationFrame(repeat);
     }
-
-    function repeat_2() {
+    /*
+    function patP() {
     	if (collision(patrick, jelly_1) || collision(patrick, jelly_2) || collison(patrick, jelly_3) || collision(patrick, jelly_4) || collision(patrick, jelly_5) || collision(patrick, jelly_6)) {
     		score_counter++;
     		console.log("nice!");
     	}
-
+	*/
     	
-    }
+    
 
     
 

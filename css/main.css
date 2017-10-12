@@ -11,6 +11,7 @@ h1 {
 	font-size: 70px;
 	font-family: 'Krabby Patty', cursive;	
 	margin-left: 10%;
+	text-decoration: underline;
 
 }
 
@@ -21,10 +22,10 @@ h1 {
 
 #container {
 	position: relative;
-	height: 80vh;
+	height: 75vh;
 	width: 75%;
 	left: 20%;
-	margin-top: 50px;
+	margin-top: 40px;
     background: url('http://www.mindspring.com/~imagea/forrest/SpongebobSquarepants_SmallSized/SB_JellyfishFields2_BG_1%20copy.jpg') no-repeat;
 	background-size: cover;
 	overflow: hidden;
@@ -45,13 +46,13 @@ h1 {
 	width: 50px;
 }
 #spongebob {
-	height: 250px;
-	width: 150px;
+	height: 150px;
+	width: 110px;
 	top: 50%;
 	left: 50%;
 	background: url('http://simex-iwerks.com/spongebob-4d/parallax/images/clouds/10.png') no-repeat;
-	background-size: contain;
-	border-radius: 15px 15px 15px 15px;
+	background-size: cover;
+	/*border-radius: 30px 30px 30px 30px;*/
 }
 
 #patrick {
@@ -114,7 +115,7 @@ h1 {
 
 #score_div{
     position: absolute;
-    margin-top: 30%;
+    margin-top: 25%;
     margin-left: 0;
     font-family: 'Krabby Patty', cursive;
     font-size: 35px;
@@ -139,7 +140,7 @@ h1 {
 
 #score_div_2{
     position: absolute;
-    margin-top: 40%;
+    margin-top: 35%;
     margin-left: 0;
     font-family: 'Krabby Patty', cursive;
     font-size: 35px;
@@ -147,4 +148,187 @@ h1 {
     color: #454545;
     padding: 10px;
     box-shadow: 4px 4px 0px 1px #808080;
+}
+
+#timer_div {
+	 position: absolute;
+    margin-top: 0;
+    margin-right: 0;
+    font-family: 'Krabby Patty', cursive;
+    font-size: 35px;
+    background-color: white;
+    color: #454545;
+    padding: 10px;
+    box-shadow: 4px 4px 0px 1px #808080;
+}
+
+#restart_div {
+	position: absolute;
+	top:10%;
+	left: 50%;
+	font-family: 'Krabby Patty', cursive;
+	font-size: 35px;
+	height: 50px;
+	width: 50px;
+	display: none;
+
+}
+#spongebob_point {
+	position: absolute;
+	top: 5%;
+	left: 20%;
+	font-family: 'Krabby Patty', cursive;
+	-webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+	font-size: 40px;
+	background-color: transparent;
+	color: yellow;
+	display: none;
+	font-weight: 900;
+}
+#patrick_point {
+	position: absolute;
+	left: 70%;
+	font-family: 'Krabby Patty', cursive;
+	-webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+	font-size: 40px;
+	background-color: transparent;
+	color: pink;
+	display: none;
+	font-weight: 900;
+}
+#spongebob_point2 {
+	position: absolute;
+	left: 10%;
+	top: 10%;
+	font-family: 'Krabby Patty', cursive;
+	-webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+	font-size: 40px;
+	background-color: transparent;
+	color: yellow;
+	display: none;
+	font-weight: 900;
+}
+#patrick_point2 {
+	position: absolute;
+	left: 70%;
+	top: 10%;
+	font-family: 'Krabby Patty', cursive;
+	-webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+	font-size: 40px;
+	background-color: transparent;
+	color: pink;
+	display: none;
+	font-weight: 900;
+}
+#spongebob_point3 {
+	position: absolute;
+	left: 20%;
+	top: 15%;
+	font-family: 'Krabby Patty', cursive;
+	-webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+	font-size: 40px;
+	background-color: transparent;
+	color: yellow;
+	display: none;
+	font-weight: 900;
+}
+#patrick_point3 {
+	position: absolute;
+	left: 60%;
+	top: 5%;
+	font-family: 'Krabby Patty', cursive;
+	-webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+	font-size: 40px;
+	background-color: transparent;
+	color: pink;
+	display: none;
+	font-weight: 900;
+}
+#sponge_king_point {
+	position: absolute;
+	left: 30%;
+	top: 5%;
+	font-family: 'Krabby Patty', cursive;
+	-webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+	font-size: 40px;
+	background-color: transparent;
+	color: yellow;
+	display: none;
+	font-weight: 900;
+}
+#patrick_king_point {
+		position: absolute;
+	left: 50%;
+	top: 5%;
+	font-family: 'Krabby Patty', cursive;
+	-webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+	font-size: 40px;
+	background-color: transparent;
+	color: pink;
+	display: none;
+	font-weight: 900;
+}
+#spongebob_winner {
+	position: absolute;
+	font-family: 'Krabby Patty';
+	-webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+	font-size: 50px;
+	text-align: center;
+	height: 350px;
+	width: 200px;
+	background: url("https://vignette.wikia.nocookie.net/nickelodeon/images/2/27/Spongebob_PNG.png/revision/latest?cb=20120702055752") no-repeat;
+	background-size: contain;
+	background-position: center center;
+	color: black;
+	left: 50%;
+	top: 50%;
+	margin: -150px 0 0 -100px;
+	display: none;
+}
+
+#patrick_winner {
+	position: absolute;
+	font-family: 'Krabby Patty';
+	-webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+	font-size: 50px;
+	text-align: center;
+	height: 350px;
+	width: 200px;
+	background: url("https://vignette2.wikia.nocookie.net/spongebob/images/2/2f/Patrick_Star_2.png/revision/latest?cb=20150117190123") no-repeat;
+	background-size: contain;
+	background-position: center center;
+	color: black;
+	left: 50%;
+	top: 50%;
+	margin: -150px 0 0 -100px;
+	display: none;
+}
+
+#tie {
+		position: absolute;
+	font-family: 'Krabby Patty';
+	-webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+	font-size: 50px;
+	text-align: center;
+	height: 350px;
+	width: 200px;
+	background: url("http://images.clipartpanda.com/spongebob-clip-art-LTKr9MKrc.gif") no-repeat;
+	background-size: contain;
+	background-position: center center;
+	color: black;
+	left: 50%;
+	top: 50%;
+	margin: -150px 0 0 -100px;
+	display: none;
 }

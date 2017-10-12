@@ -9,19 +9,22 @@
 </head>
 <body>
 	<h1>J E L L Y   F I S H   F I E L D S</h1>
+
+	<!-- scoring tables -->
 	<div id="score_div">
         Spongebob: <span id="score">0</span>
     </div>
     <div id="score_div_2">
     	Patrick: <span id="score_2">0</span>
     </div>	
+    
+
+    <!-- Player Movement Controls -->
     <div id="controls">
     	<h3>Controls</h3>
     	<ul>Spongebob:
     		<li>Left</li>
-    		<li>Right<li>
-    		<li>Up</li>
-    		<li>Down</li>
+    		<li>Right</li><li>Up</li><li>Down</li>
     	</ul>
  		<ul>Patrick: 
  			<li>A</li>
@@ -32,9 +35,34 @@
  		<p>Catch the Jellyfish!</p>
     </div>	
 
-
+	<!-- Game Board -->
 	<div id="container">
 		
+
+		<!--Point Scoring Response -->
+		<div id="spongebob_point">Nice!</div>
+		<div id="patrick_point">Nice!</div>
+		<div id="spongebob_point2">Awesome!</div>
+		<div id="patrick_point2">Awesome!</div>
+		<div id="spongebob_point3">Good Job!</div>
+		<div id="patrick_point3">Good Job!</div>
+		<div id="sponge_king_point">WooHoo!</div>
+		<div id="patrick_king_point">WooHoo!</div>
+		
+
+		<!--- Outcomes Scenarios -->
+		<div id="spongebob_winner">
+			<div id="s-winner-text">Winner!</div>
+		</div>
+		<div id="patrick_winner">
+			<div id="p-winner-text">Winner!</div>
+		</div>
+		<div id="tie">
+			<div id="tie-text">It's a Tie!</div>
+		</div>	
+
+
+		<!-- Players -->
 		<div id="spongebob" class="player">
 			<div class="body"></div>
 			<div class="net"></div>
@@ -43,6 +71,10 @@
 			<div class="body"></div>
 			<div class="net"></div>
 		</div>
+
+		
+
+		<!-- Jellyfish -->
 		<div id="jelly_1" class="jelly"></div>
 		<div id="jelly_2" class="jelly"></div>
 		<div id="jelly_3" class="jelly"></div>
@@ -50,10 +82,15 @@
 		<div id="jelly_5" class="jelly"></div>
 		<div id="jelly_6" class="jelly"></div>
 		<div id="king_jelly" class="king"></div>
+
+		<!-- Game Timer & Restart -->
+		<div id="timer_div">
+    	Time: <span id="timer">10</span>
+    	</div>
 		<div id="restart_div">
             <button id="restart">
                 Restart<br>
-                <small class="small_text">(press Enter)</small>
+                (press Enter)
             </button>
         </div>		
 

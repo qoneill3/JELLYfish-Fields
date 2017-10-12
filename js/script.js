@@ -21,7 +21,20 @@ $(function() {
     var jelly_6  = $('#jelly_6');
     var king_jelly = $('#king_jelly');
     var patrick = $('#patrick');
-    
+    var timer = $('#timer');
+    var spongebob_point = $('#spongebob_point');
+    var spongebob_point2 = $('#spongebob_point2');
+    var spongebob_point3 = $('#spongebob_point3');
+    var patrick_point = $('#patrick_point');
+    var patrick_point2 = $('#patrick_point2');
+    var patrick_point3 = $('#patrick_point3');
+    var sponge_king_point = $('#sponge_king_point');
+    var patrick_king_point = $('#patrick_king_point');
+
+    var spongebob_winner = $('#spongebob_winner');
+    var patrick_winner = $('#patrick_winner');
+    var tie = $('#tie');
+
 
 	 //saving some initial setup
     var container_left = parseInt(container.css('left'));
@@ -36,6 +49,8 @@ $(function() {
 
       //some other declarations
     var game_over = false;
+
+    var timer_counter = 1;
 
     var score_counter = 1;
     var score_counter_2 = 1;
@@ -186,38 +201,130 @@ $(function() {
     
     anim_id = requestAnimationFrame(repeat);
 
+    //Who won?!?!
+   function winner() {
+    if (score.text() > score_2.text()) {
+        spongebob_winner.fadeIn("slow");
+    }
+    else if (score.text() == score_2.text()) {
+        tie.fadeIn("slow");
+    }
+    else {
+        patrick_winner.fadeIn("slow");
+    }
+   } 
+
+
     function repeat() {
-        if (collision(spongebob, jelly_1) || collision(spongebob, jelly_2) || collision(spongebob, jelly_3) || collision(spongebob, jelly_4) || collision(spongebob, jelly_5) || collision(spongebob, jelly_6)) {
-            
-            console.log("Nice!");
-            score_counter++;
 
-            }
-        if (collision(patrick, jelly_1) || collision(patrick, jelly_2) || collision(patrick, jelly_3) || collision(patrick, jelly_4) || collision(patrick, jelly_5) || collision(patrick, jelly_6)) {
-        	console.log("patrick");
-        	score_counter_2++;
-        }   
-
-        if (score_counter_2 % 20 == 0) {
-        	score_2.text(parseInt(score_2.text()) + 1);
+        if (game_over === false) {
+            timer_counter++;
         }
-
-        if (score_counter_2 % 500 ==0) {
-        	speed++;
+        
+        if (timer_counter % 30 == 0) {
+            timer.text(parseInt(timer.text()) - 1);
         }
        
+        if (timer.text() == 0) {
+            winner();
+            spongebob.fadeOut("slow");
+            patrick.fadeOut("slow");
+            king_jelly.hide();
 
+            stop_the_game();
+          
+        }
         
 
-        if (score_counter % 20 == 0) {
+
+        //spongebob collisions!!!!
+       
+        if (collision(spongebob, jelly_1) ){
+            jelly_1.hide().delay( 5000 ).fadeIn();
             score.text(parseInt(score.text()) + 1);
-            
+            spongebob_point.show().delay( 1000 ).fadeOut("slow");
+
         }
-        if (score_counter % 500 == 0) {
-            speed++;
-            
+        
+        if (collision(spongebob, jelly_2)) {
+            jelly_2.hide().delay( 5000 ).fadeIn();
+            score.text(parseInt(score.text()) +1);
+            spongebob_point2.show().delay( 1000 ).fadeOut("slow");
+        }
+        
+        if (collision(spongebob, jelly_3)) {
+            jelly_3.hide().delay( 5000 ).fadeIn();
+            score.text(parseInt(score.text()) +1);
+            spongebob_point3.show().delay( 1000 ).fadeOut("slow");
+        }
+        
+        if (collision(spongebob, jelly_4)) {
+            jelly_4.hide().delay( 5000 ).fadeIn();
+            score.text(parseInt(score.text()) +1);
+            spongebob_point.show().delay( 1000 ).fadeOut("slow");
+        }
+        
+        if (collision(spongebob, jelly_5)) {
+            jelly_5.hide().delay( 5000 ).fadeIn();
+            score.text(parseInt(score.text()) +1);
+            spongebob_point2.show().delay( 1000 ).fadeOut("slow");
+        }
+        
+        if (collision(spongebob, jelly_6)) {
+            jelly_6.hide().delay( 5000 ).fadeIn();
+            score.text(parseInt(score.text()) +1);
+            spongebob_point3.show().delay( 1000 ).fadeOut("slow");
         }
 
+        //patrick collisions!!!!
+
+        if (collision(patrick, jelly_1)) {
+            jelly_1.hide().delay( 5000 ).fadeIn();
+            score_2.text(parseInt(score_2.text()) +1);
+            patrick_point.show().delay( 1000 ).fadeOut("slow");
+        }
+
+        if (collision(patrick, jelly_2)) {
+            jelly_2.hide().delay( 5000 ).fadeIn();
+            score_2.text(parseInt(score_2.text()) +1);
+            patrick_point.show().delay( 1000 ).fadeOut("slow");
+        }
+        
+        if (collision(patrick, jelly_3)) {
+            jelly_3.hide().delay( 5000 ).fadeIn();
+            score_2.text(parseInt(score_2.text()) +1);
+            patrick_point3.show().delay( 1000 ).fadeOut("slow");
+        }
+
+        if (collision(patrick, jelly_4)) {
+            jelly_4.hide().delay( 5000 ).fadeIn();
+            score_2.text(parseInt(score_2.text()) +1);
+            patrick_point.show().delay( 1000 ).fadeOut("slow");
+        }
+        
+        if (collision(patrick, jelly_5)) {
+            jelly_5.hide().delay( 5000 ).fadeIn();
+            score_2.text(parseInt(score_2.text()) +1);
+            patrick_point2.show().delay( 1000 ).fadeOut("slow");
+        }
+
+        if (collision(patrick, jelly_6)) {
+            jelly_6.hide().delay( 5000 ).fadeIn();
+            score_2.text(parseInt(score_2.text()) +1);
+            patrick_point3.show().delay( 1000 ).fadeOut("slow");
+        }
+
+        if (collision(spongebob, king_jelly)) {
+            king_jelly.hide().delay( 5000 ).fadeIn("fast");
+            score.text(parseInt(score.text()) + 5);
+            sponge_king_point.show().delay( 1000 ).fadeOut("slow");
+        }
+        if (collision(patrick, king_jelly)) {
+            king_jelly.hide().delay( 5000 ).fadeIn("fast");
+            score_2.text(parseInt(score_2.text()) + 5);
+            patrick_king_point.show().delay( 1000 ).fadeOut("slow");
+        }
+        
         
 
 
@@ -232,18 +339,10 @@ $(function() {
      
         anim_id = requestAnimationFrame(repeat);
     }
-    /*
-    function patP() {
-    	if (collision(patrick, jelly_1) || collision(patrick, jelly_2) || collison(patrick, jelly_3) || collision(patrick, jelly_4) || collision(patrick, jelly_5) || collision(patrick, jelly_6)) {
-    		score_counter++;
-    		console.log("nice!");
-    	}
-	*/
+
+
     	
     
-
-    
-
        function jelly_down(jelly) {
         var jelly_current_top = parseInt(jelly.css('top'));
         if (jelly_current_top > container_height) {
@@ -252,13 +351,14 @@ $(function() {
             jelly.css('left', jelly_left);
         }
         jelly.css('top', jelly_current_top + speed);
+
     }
 
    
     restart_btn.click(function() {
         location.reload();
     });
-    /*
+    
     function stop_the_game() {
         game_over = true;
         cancelAnimationFrame(anim_id);
@@ -268,11 +368,16 @@ $(function() {
         cancelAnimationFrame(move_down);
         restart_div.slideDown();
         restart_btn.focus();
+        spongebob.hide();
+        patrick.hide();
+        if (score > score_2) {
+            return "Winner: Spongebob!";
+        }
     }
 
     /* ------------------------------GAME CODE ENDS HERE------------------------------------------- */
 
-
+    //collision detection layout
     function collision($div1, $div2) {
         var x1 = $div1.offset().left;
         var y1 = $div1.offset().top;

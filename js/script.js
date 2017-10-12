@@ -227,9 +227,12 @@ $(function() {
        
         if (timer.text() == 0) {
             winner();
+            restart_btn.fadeIn("slow");
             spongebob.fadeOut("slow");
             patrick.fadeOut("slow");
-            king_jelly.hide();
+            king_jelly.fadeOut("fast");
+     
+
 
             stop_the_game();
           

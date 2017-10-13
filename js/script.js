@@ -74,15 +74,19 @@ $(function() {
         if (game_over === false) {
             var key = e.keyCode;
             if (key === 37 && spongebob_move_left === false) {
+                event.preventDefault();
                 spongebob_move_left = requestAnimationFrame(spongebob_left);
             } 
             else if (key === 39 && spongebob_move_right === false) {
+                event.preventDefault();
                 spongebob_move_right = requestAnimationFrame(spongebob_right);
             } 
             else if (key === 38 && spongebob_move_up === false) {
+                event.preventDefault();
                 spongebob_move_up = requestAnimationFrame(spongebob_up);
             } 
             else if (key === 40 && spongebob_move_down === false) {
+                event.preventDefault();
                 spongebob_move_down = requestAnimationFrame(spongebob_down);
             } 
             else if (key === 65 && patrick_move_left === false) {
@@ -224,6 +228,10 @@ $(function() {
         if (timer_counter % 30 == 0) {
             timer.text(parseInt(timer.text()) - 1);
         }
+
+        if (timer.text() == 10) {
+            timer.css('color', 'red');
+        } 
        
         if (timer.text() == 0) {
             winner();

@@ -35,6 +35,11 @@ $(function() {
     var patrick_winner = $('#patrick_winner');
     var tie = $('#tie');
 
+    var sponge_plus_reg = $('#sponge_plus_reg');
+    var sponge_plus_big = $('#sponge_plus_big');
+    var pat_plus_reg = $('#pat_plus_reg');
+    var pat_plus_big = $('#pat_plus_big');
+
 
 	 //saving some initial setup
     var container_left = parseInt(container.css('left'));
@@ -231,6 +236,7 @@ $(function() {
 
         if (timer.text() == 10) {
             timer.css('color', 'red');
+            timer.css('font-size', '45px');
         } 
        
         if (timer.text() == 0) {
@@ -254,6 +260,7 @@ $(function() {
             jelly_1.hide().delay( 5000 ).fadeIn();
             score.text(parseInt(score.text()) + 1);
             spongebob_point.show().delay( 1000 ).fadeOut("slow");
+            sponge_plus_reg.show().delay( 500 ).fadeOut("fast");
 
         }
         
@@ -261,30 +268,35 @@ $(function() {
             jelly_2.hide().delay( 5000 ).fadeIn();
             score.text(parseInt(score.text()) +1);
             spongebob_point2.show().delay( 1000 ).fadeOut("slow");
+            sponge_plus_reg.show().delay( 500 ).fadeOut("fast");
         }
         
         if (collision(spongebob, jelly_3)) {
             jelly_3.hide().delay( 5000 ).fadeIn();
             score.text(parseInt(score.text()) +1);
             spongebob_point3.show().delay( 1000 ).fadeOut("slow");
+            sponge_plus_reg.show().delay( 500 ).fadeOut("fast");
         }
         
         if (collision(spongebob, jelly_4)) {
             jelly_4.hide().delay( 5000 ).fadeIn();
             score.text(parseInt(score.text()) +1);
             spongebob_point.show().delay( 1000 ).fadeOut("slow");
+            sponge_plus_reg.show().delay( 500 ).fadeOut("fast");
         }
         
         if (collision(spongebob, jelly_5)) {
             jelly_5.hide().delay( 5000 ).fadeIn();
             score.text(parseInt(score.text()) +1);
             spongebob_point2.show().delay( 1000 ).fadeOut("slow");
+            sponge_plus_reg.show().delay( 500 ).fadeOut("fast");
         }
         
         if (collision(spongebob, jelly_6)) {
             jelly_6.hide().delay( 5000 ).fadeIn();
             score.text(parseInt(score.text()) +1);
             spongebob_point3.show().delay( 1000 ).fadeOut("slow");
+            sponge_plus_reg.show().delay( 500 ).fadeOut("fast");
         }
 
         //patrick collisions!!!!
@@ -293,47 +305,56 @@ $(function() {
             jelly_1.hide().delay( 5000 ).fadeIn();
             score_2.text(parseInt(score_2.text()) +1);
             patrick_point.show().delay( 1000 ).fadeOut("slow");
+            pat_plus_reg.show().delay( 500 ).fadeOut("fast");
         }
 
         if (collision(patrick, jelly_2)) {
             jelly_2.hide().delay( 5000 ).fadeIn();
             score_2.text(parseInt(score_2.text()) +1);
             patrick_point.show().delay( 1000 ).fadeOut("slow");
+            pat_plus_reg.show().delay( 500 ).fadeOut("fast");
         }
         
         if (collision(patrick, jelly_3)) {
             jelly_3.hide().delay( 5000 ).fadeIn();
             score_2.text(parseInt(score_2.text()) +1);
             patrick_point3.show().delay( 1000 ).fadeOut("slow");
+            pat_plus_reg.show().delay( 500 ).fadeOut("fast");
         }
 
         if (collision(patrick, jelly_4)) {
             jelly_4.hide().delay( 5000 ).fadeIn();
             score_2.text(parseInt(score_2.text()) +1);
             patrick_point.show().delay( 1000 ).fadeOut("slow");
+            pat_plus_reg.show().delay( 500 ).fadeOut("fast");
         }
         
         if (collision(patrick, jelly_5)) {
             jelly_5.hide().delay( 5000 ).fadeIn();
             score_2.text(parseInt(score_2.text()) +1);
             patrick_point2.show().delay( 1000 ).fadeOut("slow");
+            pat_plus_reg.show().delay( 500 ).fadeOut("fast");
         }
 
         if (collision(patrick, jelly_6)) {
             jelly_6.hide().delay( 5000 ).fadeIn();
             score_2.text(parseInt(score_2.text()) +1);
             patrick_point3.show().delay( 1000 ).fadeOut("slow");
+            pat_plus_reg.show().delay( 500 ).fadeOut("fast");
         }
 
+        //King Collisions
         if (collision(spongebob, king_jelly)) {
             king_jelly.hide().delay( 5000 ).fadeIn("fast");
             score.text(parseInt(score.text()) + 5);
             sponge_king_point.show().delay( 1000 ).fadeOut("slow");
+            sponge_plus_big.show().delay( 1000 ).fadeOut("slow");
         }
         if (collision(patrick, king_jelly)) {
             king_jelly.hide().delay( 5000 ).fadeIn("fast");
             score_2.text(parseInt(score_2.text()) + 5);
             patrick_king_point.show().delay( 1000 ).fadeOut("slow");
+            pat_plus_big.show().delay( 1000 ).fadeOut("slow");
         }
         
         
